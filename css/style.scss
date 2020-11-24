@@ -1,0 +1,118 @@
+* {
+  font-family: '微軟正黑體', sans-serif;
+}
+
+$card-bg: #155235;
+$card-font: #c4cf9d;
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: $card-bg;
+}
+
+.grid-box {
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  > li {
+    float: left;
+  }
+  &.col-2 {
+    > li {
+      width: calc(99.9999% / 2 - 30px);
+      padding: 10px;
+      margin: 5px;
+      > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        height: calc(100vh - 30px);
+        overflow: auto;
+        > li {
+          display: block;
+          width: calc(100% - 20px);
+          color: $card-font;
+          padding: 5px;
+          margin: 5px auto;
+          border-bottom: 1px solid $card-font;
+          strong {
+            font-size: 20px;
+            em {
+              float: right;
+            }
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    &.col-2 {
+      > li {
+        width: calc(99.9999% - 30px);
+      }
+    }
+  }
+}
+.card {
+  width: 100%;
+  color: $card-font;
+  label {
+    display: block;
+    clear: both;
+    font-size: 18px;
+    padding: 10px 0;
+    span {
+      display: block;
+      margin: 5px auto;
+      color: #fff;
+    }
+    input {
+      background: rgb(0, 0, 0, 0);
+      border: 0;
+      border-bottom: 1px solid $card-font;
+      width: 100%;
+      margin: 5px auto;
+      padding: 5px 0;
+      color: #fff;
+      &::placeholder {
+        color: $card-font;
+      }
+    }
+    &.card-mm-yy {
+      input {
+        width: 3rem;
+        text-align: center;
+      }
+    }
+  }
+  .total {
+    font-size: 1.8rem;
+    text-align: right;
+    border-bottom: 1px solid $card-font;
+    margin: 30px auto;
+  }
+  input[type='submit'] {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    color: $card-font;
+    background: $card-bg;
+    border: 1px solid $card-font;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    &:hover {
+      background: $card-font;
+      color: $card-bg;
+    }
+  }
+}
